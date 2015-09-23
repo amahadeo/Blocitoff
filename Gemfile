@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# Use Bootstrap for CSS styling
+gem 'bootstrap-sass'
 # Use Devis to user authentication
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
