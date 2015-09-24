@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+# Use RSpec framework for test
 # Use figaro for environment variables
 gem 'figaro', '1.0'
 # Use Bootstrap for CSS styling
@@ -53,5 +54,11 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  
+  # Use RSpec framework for test
+  gem 'rspec-rails', '~> 3.0'
+  
+  # Use Capybara for feature tests
+  gem 'capybara'
 end
 
