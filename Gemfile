@@ -1,13 +1,22 @@
 source 'https://rubygems.org'
 
+# Use figaro for environment variables
+gem 'figaro', '1.0'
 # Use Bootstrap for CSS styling
 gem 'bootstrap-sass'
 # Use Devis to user authentication
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use PostgreSQL as the database for Active Record in production
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+# Use sqlite3 as the database for Active Record in development
+group :development do
+  gem 'sqlite3'
+end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
