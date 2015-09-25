@@ -48,7 +48,6 @@ describe "Sign up flow" do
       
       click_button('Sign up')
       expect(current_path).to eq(user_registration_path)
-      # expect(page).to have_content("missing an '@'")
     end
       
   end
