@@ -1,0 +1,7 @@
+<h1>Fancy meeting you here!</h1>
+<br />
+<h4>Your profile:</h4>
+<p>Username: <%= @user.username %></p>
+<p>Email: <%= @user.email %></p>
+<p>Member since: <%= (@user.created_at).to_formatted_s(:long_ordinal) %></p>
+<p>Last login: <%= time_ago_in_words(@user.last_sign_in_at) %></p>
