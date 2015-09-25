@@ -60,5 +60,8 @@ group :development, :test do
   
   # Use Capybara for feature tests
   gem 'capybara'
+  
+  # Use FactoryGirl for test factories
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
