@@ -1,0 +1,8 @@
+<tr>
+  <td>
+    <%= form_for [user, item] do |f| %>
+      <%= f.text_field :name, placeholder: "Create new todo" %>
+      <%= f.submit "Create", class: 'btn btn-success' %>
+    <% end %>
+  </td>
+</tr>

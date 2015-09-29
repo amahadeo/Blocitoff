@@ -4,4 +4,19 @@
 <p>Username: <%= @user.username %></p>
 <p>Email: <%= @user.email %></p>
 <p>Member since: <%= (@user.created_at).to_formatted_s(:long_ordinal) %></p>
-<p>Last login: <%= time_ago_in_words(@user.last_sign_in_at) %></p>
+<p>Last login: <%= time_ago_in_words(@user.last_sign_in_at) %> ago</p>
+<br />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Task</th>
+            <th>Time Left</th>
+            <th>Done!</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%= render @items %>
+        <%= render partial: 'items/form', locals: {user: @user, item: @user.items.new} %>
+    </tbody>
+</table>
