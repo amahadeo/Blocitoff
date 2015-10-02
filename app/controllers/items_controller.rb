@@ -10,6 +10,23 @@ class ItemsController < ApplicationController
     end
   end
   
+  def destroy
+    @item = Item.find(params[:id])
+    
+    if @item.destroy
+      flash[:notice] = "Yes! Todo finished and deleted."
+    else
+      flash[:error] = "Oops! There was an error deleting that todo, try again."
+    end
+    
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+  
+  protected 
+  
   def items_params
     params.require(:item).permit(:name)
   end
