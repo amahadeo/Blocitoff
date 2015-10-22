@@ -7,6 +7,8 @@ gem 'figaro', '1.0'
 gem 'bootstrap-sass'
 # Use Devis to user authentication
 gem 'devise'
+# Use Pundit for user authorization
+gem 'pundit'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use PostgreSQL as the database for Active Record in production
