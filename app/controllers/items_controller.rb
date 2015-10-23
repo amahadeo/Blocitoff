@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @item = @user.items.build(items_params)
+    authorize @item
     
     if @item.save
       redirect_to @user, notice: "Yes! New todo saved!"
@@ -12,6 +13,7 @@ class ItemsController < ApplicationController
   
   def destroy
     @item = Item.find(params[:id])
+    authorize @item
     
     if @item.destroy
       flash[:notice] = "Yes! Todo finished and deleted."
