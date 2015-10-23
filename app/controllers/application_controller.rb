@@ -5,6 +5,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   
+  rescue_from Pundit::NotAuthorizedError do |exception|
+    if current_user
+      redirect_to current_user, alert: "Sorry, not authorized for that page!"
+    else
+      redirect_to root_url, alert: "Sorry, not authorized for that page, please sign in."
+    end
+  end
+  
   def after_sign_in_path_for(resource)
     user_path(resource)
   end
