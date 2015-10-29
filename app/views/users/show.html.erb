@@ -1,13 +1,19 @@
-<h1>Fancy meeting you here!</h1>
+<h1>Let's get to work!</h1>
 <br />
-<h4>Your profile:</h4>
-<p>Username: <%= @user.username %></p>
-<p>Email: <%= @user.email %></p>
-<p>Member since: <%= (@user.created_at).to_formatted_s(:long_ordinal) %></p>
-<p>Last login: <%= time_ago_in_words(@user.last_sign_in_at || Time.now) %> ago</p>
+<div class="row">
+  <div class="col-md-4">
+    <div class>
+      <h4>Your profile:</h4>
+      <p>Username: <%= @user.username %></p>
+      <p>Email: <%= @user.email %></p>
+      <p>Member since: <%= (@user.created_at).to_formatted_s(:long_ordinal) %></p>
+      <p>Last login: <%= time_ago_in_words(@user.last_sign_in_at || Time.now) %> ago</p>
+    </div>
+  </div>
+</div>
 <br />
 
-<table class="table table-striped">
+<table class="table table-striped shaded">
     <thead>
         <tr>
             <th>Task</th>
