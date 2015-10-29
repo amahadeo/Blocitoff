@@ -9,17 +9,20 @@
 </head>
 <body>
   <div class="container">
-    <div class="user-info">
-      <% if current_user %>
-        Hello <%= link_to current_user.username, edit_user_registration_path %>! | 
-        <%= link_to "My Todos", current_user %> | 
-        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to "Sign Up", new_user_registration_path %> | 
-        <%= link_to "Sign In", new_user_session_path %>
-      <% end %>
-    </div>
-    
+    <ul class="nav nav-tabs">
+      <strong><%= link_to "Blocitoff", root_path, class: 'pull-left home' %></strong>
+      
+      <div class="user-info">
+        <% if current_user %>
+          Hello <%= link_to current_user.username, edit_user_registration_path %>! | 
+          <%= link_to "My Todos", current_user %> | 
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Sign Up", new_user_registration_path %> | 
+          <%= link_to "Sign In", new_user_session_path %>
+        <% end %>
+      </div>
+    </ul>
     <% if flash[:notice] %>
       <div class="alert alert-success">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -36,9 +39,11 @@
         <%= flash[:alert] %>
       </div>
     <% end %> 
-      
+        
     
-  <%= yield %>
+    
+    <%= yield %>
+    
   </div>
 </body>
 </html>
